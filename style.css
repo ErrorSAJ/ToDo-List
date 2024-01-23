@@ -1,0 +1,402 @@
+  @import url('https://fonts.googleapis.com/css2?family=Acme&family=Borel&family=Dancing+Script&family=Poppins:wght@100;500&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Acme', sans-serif;
+  }
+
+  body {
+      background-color: rgba(255, 255, 255, 0.979);
+      display: flex;
+      overflow: hidden;
+  }
+
+  /* --- scroll bar css here ---  */
+  ::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* --- nav bar code here ---  */
+  .side_nav {
+      background: #333433;
+      width: 50px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.5s ease;
+      z-index: 99;
+  }
+
+  .menu_nav {
+      border-bottom: 1px solid #E63146;
+  }
+
+  #hemburger,
+  #close_window {
+      display: grid;
+      place-content: center;
+      font-size: 25px;
+      color: #E63146;
+      margin: 5px;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  #hemburger:hover,
+  #close_window:hover {
+      background-color: #E63146;
+      color: #333433;
+  }
+
+  #close_window {
+      display: none;
+  }
+
+  .user_setting {
+      display: flex;
+      flex-direction: column;
+      font-size: 25px;
+      color: white;
+      margin-bottom: 10px;
+      gap: 20px;
+  }
+
+  /* -- showing task section code here -- */
+  .show_task {
+      width: 100%;
+      display: grid;
+      grid-template-rows: 2fr auto;
+      background-image: url('https://cdn.wallpapersafari.com/3/84/fQh934.png');
+      background-size: cover;
+      background-position: center;
+  }
+
+  .heding_line {
+      font-size: 30px;
+      text-align: center;
+      color: black;
+  }
+
+  .conten_task {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+  }
+
+  .conten_task li {
+      background-image: linear-gradient(to left, #E63146 50%, #333433 50%);
+      min-height: 50px;
+      margin: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+  }
+
+  .conten_task li::before {
+      content: '';
+      padding: 15px;
+      position: relative;
+      background-color: #E63146;
+      border-radius: 5px;
+      margin: 10px;
+  }
+
+  .conten_task li.checked::before {
+      content: '';
+      padding: 15px;
+      position: relative;
+      background-image: url('Photo Cut Paste  Background Changer2023_08_20_02_19_37.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  .conten_task li ion-icon {
+      font-size: 18px;
+      margin: 0px 5px;
+  }
+
+  .editPen {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 150px);
+      position: relative;
+      color: white;
+      background-color: rgb(19, 19, 19);
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  .editPen:focus {
+      outline: none;
+  }
+
+  .edit_pen,
+  .delet_pen {
+      padding: 10px;
+      border-radius: 5px;
+      opacity: 0.7;
+  }
+
+  .edit_pen:hover,
+  .delet_pen:hover {
+      background-color: #333433;
+      opacity: 1;
+  }
+
+  .write {
+      background-image: linear-gradient(to left, #E63146 50%, #333433 50%);
+      color: white;
+      height: 50px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .write ion-icon {
+      color: white;
+      padding: 5px;
+      margin: 10px;
+      opacity: 0.7;
+      border-radius: 5px;
+  }
+
+  .write ion-icon.addTask:hover {
+      background-color: #E63146;
+      opacity: 1;
+      color: #333433;
+  }
+
+  .write ion-icon#clear_task:hover {
+      background-color: #333433;
+      opacity: 1;
+      color: #E63146;
+  }
+
+  .text {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 50px);
+  }
+
+  .eraze {
+      display: flex;
+      align-items: center;
+  }
+
+  .write .task {
+      color: white;
+      background-color: rgb(19, 19, 19);
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      width: calc(100% - 50px);
+      font-size: 17px;
+      padding-left: 20px;
+  }
+
+  .task:focus {
+      outline: none;
+  }
+
+  /* --- here is hidden_info div code ---  */
+  .alingg_hidden {
+      height: 100%;
+      width: 100%;
+  }
+
+  #hidden_info {
+      display: flex;
+      align-items: center;
+      color: white;
+      margin: 20px 0px;
+      padding: 10px 0px;
+  }
+
+  #hidden_info:hover {
+      background-image: linear-gradient(315deg, #333433 30%, #E63146 25%);
+  }
+
+  .show_quantity {
+      font-size: 20px;
+      display: flex;
+      padding: 5px;
+      margin: 0 2px;
+  }
+
+  #hidden_info span {
+      font-size: 15px;
+  }
+
+  .hidden_text {
+      width: 60%;
+      text-align: center;
+      transition: all 1s ease;
+      display: none;
+  }
+
+  #hidden_cloud {
+      animation: getAtention 1s ease infinite;
+  }
+
+  @keyframes getAtention {
+
+      0%,
+      1% {
+          transform: rotate(-20deg);
+      }
+
+      50%,
+      60% {
+          transform: rotate(0deg);
+      }
+
+      100% {
+          transform: rotate(20deg);
+
+      }
+  }
+
+  /* --- hidden section code here ---  */
+  #hidden-content {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      background-image: linear-gradient(-90deg, #333433 50%, #E63146 50%);
+      transition: all 0.5s ease;
+  }
+
+  .close-Tab {
+      width: 80vw;
+      display: flex;
+      justify-content: end;
+      transition: all 0.5s ease;
+  }
+
+  #hidden-content #close_Task_tab {
+      font-size: 30px;
+      border-radius: 50%;
+      color: #E63146;
+      margin-bottom: 10px;
+      margin-right: 10px;
+  }
+
+  #hidden-content #close_Task_tab:hover {
+      color: #333433;
+      background-color: #E63146;
+  }
+
+  #hidden_contaner {
+      background-image: linear-gradient(90deg, #333433 50%, #E63146 50%);
+      height: 80vh;
+      width: 80vw;
+      overflow: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px black;
+      transition: all 0.5s ease;
+  }
+
+  .moreTask {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+  }
+
+  .moreTask li {
+      min-height: 50px;
+      margin: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+  }
+
+  .moreTask li:before {
+      content: '';
+      padding: 15px;
+      position: relative;
+      background-color: #E63146;
+      border-radius: 5px;
+      margin: 10px;
+  }
+
+  .moreTask li.checked::before {
+      content: '';
+      padding: 15px;
+      position: relative;
+      background-image: url('Photo Cut Paste  Background Changer2023_08_20_02_19_37.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+      body,
+      html {
+          /* height: calc(100vh - 50px); */
+          position: relative;
+      }
+
+      .side_nav {
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          bottom: 10%;
+          right: 3%;
+          background-color: #E63146;
+          border-radius: 50%;
+          box-shadow: 0px 0px 10px #E63146;
+      }
+
+      .menu_nav {
+          border: none;
+      }
+
+      #hemburger,
+      #close_window {
+          display: none;
+      }
+
+      .show_task {
+          height: 100dvh;
+      }
+
+      #hidden_info {
+          margin: 0px 0px 0px 5px;
+      }
+
+      #hidden_info:hover {
+          background-image: none;
+          background-color: #333433;
+      }
+
+      #hidden-content {
+          width: 100%;
+      }
+
+      #hidden_contaner {
+          height: 70vh;
+          width: 100%;
+          padding: 0;
+      }
+  }
